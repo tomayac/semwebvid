@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+    "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/" 
+    xmlns:ctag="http://commontag.org/ns#"
+    xmlns:event="http://purl.org/NET/c4dm/event.owl#"
+    xmlns:tl="http://purl.org/NET/c4dm/timeline.owl#"
+    xmlns:bibo="http://purl.org/ontology/bibo/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"    
+    version="XHTML+RDFa 1.0" xml:lang="en">
+  <head>    
+    <script type="text/javascript" src="swfobject.js"></script>    
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      <!--
+      google.load("language", "1");
+      -->
+    </script>
+    <link rel="shortcut icon" href="favicon.ico"/>    
+    <title>
+      SemWebVid: Making Video a First Class Semantic Web Citizen and a First
+      Class Web Bourgeois
+    </title>
+    
+    <link href="./css/main.css" rel="stylesheet" type="text/css" />
+    
+    <script type="application/javascript" src="./js/semwebvid.js"></script>
+    <script type="text/javascript">
+      <!--
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-2040927-8']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' === document.location.protocol? 'https://ssl' : 'http://www') +
+            '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+      -->
+    </script>        
+    
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">    
+    <!--[if IE]>
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+
+      <style>
+        .chromeFrameInstallDefaultStyle {
+          width: 100%; /* default is 800px */
+          border: 5px solid blue;
+        }
+      </style>
+      <script>
+        // The conditional ensures that this code will only execute in IE,
+        // Therefore we can use the IE-specific attachEvent without worry
+        window.attachEvent("onload", function() {
+          CFInstall.check({
+              mode: "inline", // the default
+              node: "prompt"
+           });
+         });
+      </script>
+    <![endif]-->    
+  </head>
+  <body onload="AppLogic.init();">    
+    <h1>SemWebVid</h1>
+    <h2>Making Video a First Class Semantic Web Citizen and a First Class Web Bourgeois</h2>
+    <div id="prompt">
+    <!-- if IE without GCF, prompt goes here -->
+    </div>    
+    <div>      
+      <input id="youtube-video-id" onchange="AppLogic._updateWatchOnYouTubeLink(this.value);" onkeyup="AppLogic._updateWatchOnYouTubeLink(this.value);" class="input-field" type="text" value="3PuHGKnboNY" placeholder="YouTube Video ID" />
+      YouTube Video ID
+      <button type="button" onclick="AppLogic._onGetVideoDataButtonClick();">Get Video Data</button>    
+      <span id="watchOnYouTube"></span>
+      <br/>
+      <span class="example">(try e.g. <a onclick="document.getElementById('youtube-video-id').value='mbVVDDu8f9k'; AppLogic._onGetVideoDataButtonClick();" href="./#id=mbVVDDu8f9k">mbVVDDu8f9k</a>, <a onclick="document.getElementById('youtube-video-id').value='a46hJYtsP-8'; AppLogic._onGetVideoDataButtonClick();" href="./#id=a46hJYtsP-8">a46hJYtsP-8</a>, <a onclick="document.getElementById('youtube-video-id').value='diTpeYoqAhc'; AppLogic._onGetVideoDataButtonClick();" href="./#id=diTpeYoqAhc">diTpeYoqAhc</a>, <a onclick="document.getElementById('youtube-video-id').value='1E7lV5_0M38'; AppLogic._onGetVideoDataButtonClick();" href="./#id=1E7lV5_0M38">1E7lV5_0M38</a>, or <a onclick="document.getElementById('youtube-video-id').value='_GdSC1Z1Kzs'; AppLogic._onGetVideoDataButtonClick();" href="./#id=_GdSC1Z1Kzs">_GdSC1Z1Kzs</a>)</span>
+      <br style="clear: both;"/>    
+      <div class="youtube-container" id="youtube-video-container">youtube-video-container</div>
+      <div class="youtube-search-container" id="youtube-search-container">
+        YouTube Video Search 
+        <form onsubmit="YouTube.search(document.getElementById('query').value, 'YouTube._receiveVideoSearchResult'); return false;">
+          <input name="query" id="query" type="text" placeholder="Query" value="" />
+          <button type="submit">Search</button>
+        </form>         
+        <div class="youtube-video-results" id="youtube-search-results"></div>        
+      </div>
+      <br style="clear: both;"/>
+      <div class="semantic-depiction-container" id="semantic-depiction-container"></div>      
+      <div class="caption-outer-container">
+        <select style="display:none;" id="languageSelect" onchange='VideoPlayer.pause(); YouTube._receiveVideoCaptionList(YouTube._receivedCaptionList, this.selectedIndex);'></select>
+        <div class="caption-container" id="youtube-caption-container">youtube-caption-container</div>
+      </div>  
+      <div class="semantic-container"><pre id="semantic-container">semantic-container</pre></div>    
+      <br style="clear: both;"/>          
+      <div>
+        <button type="button" onclick="Converter.convert('turtle');">Convert to Turtle</button>              
+        <button type="button" onclick="Converter.convert('n3');">Convert to N3</button>              
+        <button type="button" onclick="Converter.convert('rdfxml');">Convert to RDF/XML</button>              
+        <button type="button" onclick="Converter.convert('ntriples');">Convert to N-Triples</button>      
+        <button type="button" onclick="Download.postData(Converter._outputFormat);">Download</button>      
+      </div>
+      <div class="legend-container">
+        <strong>Provenance Color Legend:</strong>
+        <script type="text/javascript">
+          document.write('<span style="background-image: url(\'./css/' + OpenCalais._color + '.png\'); background-repeat: repeat-x;">OpenCalais</span> ');          
+          document.write('<span style="background-image: url(\'./css/' + Zemanta._color + '.png\'); background-repeat: repeat-x;">Zemanta</span> ');          
+          document.write('<span style="background-image: url(\'./css/' + Alchemy._color + '.png\'); background-repeat: repeat-x;">Alchemy</span> ');          
+          document.write('<span style="background-image: url(\'./css/' + Sindice._color + '\'); background-repeat: repeat-x;">Sindice</span> ');          
+          document.write('<span style="background-image: url(\'./css/' + Freebase._color + '\'); background-repeat: repeat-x;">Freebase</span> ');          
+          document.write('<span style="background-image: url(\'./css/' + Uberblic._color + '\'); background-repeat: repeat-x;">Uberblic</span> ');          
+          document.write('<span style="background-image: url(\'./css/' + Dbpedia._color + '\'); background-repeat: repeat-x;">DBpedia</span> ');
+        </script>
+      </div>
+      <div class="plaintext-container" id="plaintext-container">plaintext-container</div>    
+      <div class="opencalais-container" id="opencalais-container">opencalais-container</div>          
+      <div class="zemanta-container" id="zemanta-container">zemanta-container</div>                
+      <div class="alchemy-container" id="alchemy-container">alchemy-container</div>                      
+      <div class="depiction-container" id="depiction-container">depiction-container</div>      
+    </div>  
+    
+    <div class="attribution-container">
+      <div class="attribution">
+        <strong>Powered by:</strong>
+      </div>
+      <br style="clear: both;"/>        
+      <div class="attribution"><a href="http://opencalais.com/">OpenCalais API</a><br/><img style="width:80px;" src="./resources/calais.png"/></div>
+      <div class="attribution"><a href="http://zemanta.com/">Zemanta API</a><br/><img style="position:relative;top:5px;width:90px;" src="./resources/zemanta.png"/></div>      
+      <div class="attribution"><a href="http://alchemyapi.com/">Alchemy API</a><br/><img style="position:relative;top:10px;width:90px;" src="./resources/alchemy.jpg"/></div>      
+      <br style="clear: both;"/>
+      <div class="attribution"><a href="http://dbpedia.org/">DBpedia API</a><br/><img style="width:55px;" src="./resources/dbpedia.png"/></div>
+      <div class="attribution"><a href="http://freebase.com/">Freebase API</a><br/><img style="position:relative;top:10px;width:100px;" src="./resources/freebase.png"/></div>
+      <div class="attribution"><a href="http://sindice.com/">Sindice API</a><br/><img style="position:relative;top:5px;width:100px;" src="./resources/sindice.png"/></div>
+      <div class="attribution"><a href="http://uberblic.org/">Uberblic API</a><br/><img style="position:relative;top:15px;width:100px;" src="./resources/uberblic.png"/></div>
+      <br style="clear: both;"/>
+      <div class="attribution"><a href="http://any23.org/">Any23 API</a><br/><img style="width:70px;" src="./resources/any23.png"/></div>
+      <div class="attribution"><a href="http://rdfabout.com/">rdf:about API</a><br/><img style="position:relative;top:5px;width:100px;" src="./resources/rdfabout.png"/></div>
+      <br style="clear: both;"/>
+      <div class="attribution"><a href="http://code.google.com/apis/youtube/overview.html">YouTube API</a><br/><img style="width:60px;" src="./resources/youtube.png"/></div>
+      <div class="attribution"><a href="http://code.google.com/apis/ajaxlanguage/">Google AJAX API</a><br/><img style="position:relative;top:5px;width:80px;" src="./resources/google.png"/></div>      
+      <br style="clear: both;"/>                
+      <div class="attribution">
+        Partly financed by the <a href="http://www.isearch-project.eu/isearch/">EU FP7 I-SEARCH Project</a>.
+        <br/>
+        <img style="width:100px;" src="./resources/isearch.png"/>
+      </div>                    
+      <br style="clear: both;"/>                
+    </div>
+    <div style="clear: both;">
+      <small>This website uses Google Analytics, a Web analytics service provided by Google Inc.</small>
+    </div>    
+  </body>
+</html>

@@ -1,0 +1,174 @@
+body {
+  font-family: sans-serif;
+  font-size: 12pt;
+  padding: 1em;
+}
+h1 {
+  font-size: 1.5em;
+}
+a:link {
+  color: #0000FF;
+  text-decoration: none;
+}
+a:visited {
+  color: #0000FF;
+  text-decoration: none;        
+}
+a:hover {
+  color: #0000FF;
+  text-decoration: underline;
+}
+a:active {
+  color: #0000FF;
+  text-decoration: underline;
+} 
+.input-field {
+  width: 12em;
+  border: solid red 2px;
+}
+.youtube-container {
+  border: solid green 2px;
+  margin: 1em 1em 1em 0em;
+  width: 425px;
+  height: 340px;
+  float: left;
+}
+.youtube-search-container {
+  border: solid green 2px;
+  margin: 1em 1em 1em 0em;
+  width: 625px;
+  height: 340px;
+  float: left;
+}        
+.youtube-video-results {
+  overflow: auto;
+  width: 100%;
+  height: 85%;
+}
+.caption-time {
+  color: gray;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+.caption-outer-container {
+  border: solid green 2px;
+  margin: 1em 1em 1em 0em;
+  width: 425px;
+  height: 500px;
+  clear: both;
+  float: left;
+}      
+.caption-container {
+  width: 425px;
+  height: 478px;
+  overflow: auto;
+}      
+.semantic-container {
+  border: solid green 2px;
+  margin: 1em 1em 1em 0em;
+  width: 625px;
+  height: 500px;
+  overflow: auto;
+  float: left;
+}
+.depiction-container {
+  border: solid green 2px;
+  margin: 1em 1em 1em 0em;
+  width: 1070px;
+  height: 300px;
+  overflow: auto;
+}        
+.semantic-depiction-container {
+  border: solid green 2px;
+  height: 60px;
+  width: 1070px;
+  whitespace: nowrap;
+  overflow: auto;
+}       
+.semantic-depiction {
+  height: 60px;
+  overflow: hidden;
+}   
+.legend-container {
+  border: solid green 2px;
+  margin: 1em 1em 1em 0em;
+  width: 1070px;
+}    
+.plaintext-container {
+  border: solid green 2px;
+  display: none;
+  margin: 1em 1em 1em 0em;
+  width: 1070px;
+  height: 300px;
+  overflow: auto;
+}                  
+.opencalais-container {
+  border: solid green 2px;
+  margin: 1em 1em 1em 0em;
+  width: 1070px;
+  height: 300px;
+  overflow: auto;
+}                  
+.zemanta-container {
+  border: solid green 2px;
+  margin: 1em 1em 1em 0em;
+  width: 1070px;
+  height: 300px;
+  overflow: auto;
+}                        
+.alchemy-container {
+  border: solid green 2px;
+  margin: 1em 1em 1em 0em;
+  width: 1070px;
+  height: 300px;
+  overflow: auto;
+}                              
+.example {
+  color: gray;
+  font-size: 0.9em;
+}
+.controls {
+  text-align: center;
+}
+.transparent {
+  background-color: transparent;
+}
+.highlighted {
+  background-color: #EEEEEE;
+}
+.currentTime {
+  font-family: monospace;
+}
+.attribution-container {
+  background-color: white;
+  height: 400px;
+}
+.attribution {
+  margin: 0.5em;
+  float: left;
+}
+.message {
+  position: fixed;
+  top: 120px;        
+  width: 100%; 
+  text-align:center;
+}
+.messageText {
+  color: black;          
+  background-color: yellow;        
+  padding: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid black;        
+}
+.mouseover {
+  background-color: #EEEEEE;
+}
+.mouseout {
+  background-color: transparent;
+}
+.seek-to {
+  color: blue;
+  cursor: pointer;        
+}
