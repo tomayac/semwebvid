@@ -1289,7 +1289,7 @@ var Alchemy;
 if (!Alchemy) {
   Alchemy = {};
 }
-Alchemy.LICENSE_ID = "c161578ef310b99d523277918f66ac8ecee5057a";
+Alchemy.LICENSE_ID = "";
 Alchemy.MAX_REQUEST_LENGTH_IN_BYTES = 150 * 1024;
 Alchemy.API_URI = "http://access.alchemyapi.com/";
 Alchemy._entities = {};
@@ -1516,7 +1516,7 @@ if (!Zemanta) {
   Zemanta = {};
 }
 Zemanta.MAX_REQUEST_LENGTH_IN_BYTES = 8 * 1024;
-Zemanta.LICENSE_ID = "fnzgpfwqthaaexbmqvet5rcx";
+Zemanta.LICENSE_ID = "";
 Zemanta.API_URI = "http://api.zemanta.com/services/rest/0.0/";
 Zemanta._color = "lime";
 Zemanta.search = function(content) {
@@ -1629,7 +1629,7 @@ var OpenAmplify;
 if (!OpenAmplify) {
   OpenAmplify = {};
 }
-OpenAmplify.LICENSE_ID = "7ekfpx5dtccnnx88fkj39mfy67jx6b9y";
+OpenAmplify.LICENSE_ID = "";
 OpenAmplify.MAX_REQUEST_LENGTH_IN_BYTES = Math.floor(2.5 * 1024);
 OpenAmplify.API_URI =
     "http://portaltnx20.openamplify.com/AmplifyWeb_v20/AmplifyThis?";
@@ -1660,7 +1660,7 @@ if (!OpenCalais) {
   OpenCalais = {};
 }
 OpenCalais.MAX_REQUEST_CHARS = 100000;
-OpenCalais.LICENSE_ID = "vvdskgg3qj86h5w7jn2ay9yh";
+OpenCalais.LICENSE_ID = "";
 OpenCalais._color = "yellow";
 OpenCalais._sameAs = {};
 OpenCalais.PARAMS_XML =
